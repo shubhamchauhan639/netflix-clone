@@ -36,16 +36,16 @@ const Login = () => {
         />
 
         <button className="w-full bg-red-600 text-white font-semibold p-4 rounded-md hover:bg-red-700 transition" onClick={toggleSignInForm}>
-          {isSignIn ? "Sign In" : "Sign Out"}
+          {isSignIn ? "Sign In" : "Sign Up"}
         </button>
        <label className='text-white mb-15 mr-57 text-2xl'><input type="checkbox" className='text-white w-5 h-5' /> Remember me</label> 
 <p className="p-4 text-white">
-  <span className="text-gray-400">New to Netflix?</span>{" "}
+  <span className="text-gray-400">{isSignIn ? "New to Netflix?" : "Already registered"}</span>{" "}
   <span
     className="cursor-pointer hover:underline text-white"
     onClick={toggleSignInForm}
   >
-    Sign Up Now
+  {isSignIn ? "Sign Up" : "Sign In"}
   </span>
 </p>      </form>
       </div>
