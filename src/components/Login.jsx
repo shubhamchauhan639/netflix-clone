@@ -11,12 +11,13 @@ const Login = () => {
   const password = useRef(null);
   const handleButtonClick =()=>{
     console.log(email.current.value);
-  console.log(password.current.value);
+  // console.log(password.current.value);
 const message = checkValidData(email.current.value , password.current.value)
+console.log(message)
 setErrorMessage(message)
   }
   const toggleSignInForm =()=>{
-    setSignIn(!setSignIn)
+    setSignIn(!isSignInsetSignIn)
   
   
   
