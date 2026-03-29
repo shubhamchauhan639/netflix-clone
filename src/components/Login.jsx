@@ -2,8 +2,8 @@ import React from 'react'
 import Header from './Header'
 import { useState, useRef } from 'react'
 import { checkValidData } from '../utils/validate'
-// import { createUserWithEmailAndPassword  } from "firebase/auth";
-// import { auth } from "..utils/firebase"
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase"
 
 const Login = () => {
 
@@ -11,21 +11,35 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState(null)
   const email = useRef(null);
   const password = useRef(null);
+
   const handleButtonClick = () => {
     console.log(email.current.value);
-    // console.log(password.current.value);
     const message = checkValidData(email.current.value, password.current.value)
     console.log(message)
     setErrorMessage(message)
-  
+
+    if(message) return;
+
+    if(isSignIn){
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage)
+      });
+    }
+    else{
+    }
   }
+
   const toggleSignInForm = () => {
     setSignIn(!isSignIn)
-
-
-
-
   }
+
   return (
     <div>
       <Header />
@@ -54,11 +68,17 @@ const Login = () => {
             placeholder="Password"
             className="p-4 w-full bg-gray-700 text-white rounded-md outline-none"
           />
+
           <p className='text-red-600'>{errorMessage}</p>
+
           <button className="w-full bg-red-600 text-white font-semibold p-4 rounded-md hover:bg-red-700 transition" onClick={handleButtonClick}>
             {isSignIn ? "Sign In" : "Sign Up"}
           </button>
-          <label className='text-white mb-15 mr-57 text-2xl'><input type="checkbox" className='text-white w-5 h-5' /> Remember me</label>
+
+          <label className='text-white mb-15 mr-57 text-2xl'>
+            <input type="checkbox" className='text-white w-5 h-5' /> Remember me
+          </label>
+
           <p className="p-4 text-white">
             <span className="text-gray-400">{isSignIn ? "New to Netflix?" : "Already registered"}</span>{" "}
             <span
@@ -67,7 +87,8 @@ const Login = () => {
             >
               {isSignIn ? "Sign Up" : "Sign In"}
             </span>
-          </p>      </form>
+          </p>
+        </form>
       </div>
     </div>
   )
