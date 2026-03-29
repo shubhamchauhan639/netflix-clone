@@ -2,8 +2,8 @@ import React from 'react'
 import Header from './Header'
 import { useState, useRef } from 'react'
 import { checkValidData } from '../utils/validate'
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "..utils/firebase"
+// import { createUserWithEmailAndPassword  } from "firebase/auth";
+// import { auth } from "..utils/firebase"
 
 const Login = () => {
 
@@ -17,21 +17,7 @@ const Login = () => {
     const message = checkValidData(email.current.value, password.current.value)
     console.log(message)
     setErrorMessage(message)
-    if (message) return
-    if (!isSignIn) {
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed up 
-          const user = userCredential.user;
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-        });
-    }
-
+  
   }
   const toggleSignInForm = () => {
     setSignIn(!isSignIn)
