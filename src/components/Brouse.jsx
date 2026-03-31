@@ -1,14 +1,15 @@
 import React from 'react'
 
 import Body from './Body'
+import Header from './Header'
 
 
 const Brouse = () => {
  
   return (
     <div>
-      browse
-    </div>
+      <Header/>
+       browse   </div>
   )
 }
 

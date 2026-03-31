@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import { useState, useRef } from 'react'
 import { checkValidData } from '../utils/validate'
+import {useNavigate} from 'react-router-dom'
 import { 
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword
@@ -15,6 +16,7 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
+   const navugate = useNavigate();
 
   const handleButtonClick = () => {
     const message = checkValidData(email.current.value, password.current.value)
@@ -31,6 +33,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           console.log("Login Success:", userCredential.user)
+          navugate("/brouse")
         })
         .catch((error) => {
           setErrorMessage(error.code + " - " + error.message)
@@ -46,6 +49,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           console.log("Signup Success:", userCredential.user)
+        
         })
         .catch((error) => {
           setErrorMessage(error.code + " - " + error.message)
