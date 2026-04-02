@@ -59,7 +59,7 @@ const Login = () => {
 
   const toggleSignInForm = () => {
     setSignIn(!isSignIn)
-    setErrorMessage(null) // optional fix
+    setErrorMessage(null) 
   }
 
   return (
