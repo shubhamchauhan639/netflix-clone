@@ -16,15 +16,16 @@ const Header = () => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
 
-        dispatch(
-          addUser({
-            uid,
-            email,
-            displayName,
-            photoURL,
-          })
-        );
-
+     dispatch(
+  addUser({
+    uid,
+    email,
+    displayName: displayName || "User",  // ✅ fallback
+    photoURL:
+      photoURL ||
+      "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+  })
+);
         navigate("/brouse");
       } else {
         dispatch(removeUser());
@@ -42,7 +43,7 @@ const Header = () => {
 
   return (
     <div className="absolute px-8 w-screen py-2 bg-gradient-to-b from-black flex justify-between items-center">
-      
+
       {/* Logo */}
       <img
         className="w-44"
