@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase"
 import { useDispatch } from "react-redux";
-import { addUser } from "../utils/userSlice"; // ✅ ADDED
+import { addUser } from "../utils/userSlice"; 
 
 const Login = () => {
 
@@ -54,7 +54,7 @@ const Login = () => {
         });
     } 
     
-    // ✅ SIGN UP (🔥 FIXED)
+    
     else {
       createUserWithEmailAndPassword(
         auth,
@@ -64,18 +64,17 @@ const Login = () => {
       .then(async (userCredential) => {
         const user = userCredential.user;
 
-        // ✅ update profile
         await updateProfile(user, {
           displayName: name.current.value,
           photoURL: "https://lh3.googleusercontent.com/a/ACg8ocK5fKjrhSQm15SuhpOVmZ6ANL9gHO8ZEncXAaLki2z75TBQFabT=s324-c-no"
         });
 
-        // 🔥 VERY IMPORTANT (force refresh user data)
+    
         await user.reload();
 
         const updatedUser = auth.currentUser;
 
-        // ✅ now correct data from firebase
+       
         dispatch(addUser({
           uid: updatedUser.uid,
           email: updatedUser.email,
