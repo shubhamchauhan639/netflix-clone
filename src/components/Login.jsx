@@ -75,6 +75,7 @@ const Login = () => {
         const updatedUser = auth.currentUser;
 
        
+        
         dispatch(addUser({
           uid: updatedUser.uid,
           email: updatedUser.email,
