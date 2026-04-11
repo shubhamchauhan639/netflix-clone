@@ -2,6 +2,8 @@ import React from 'react'
 
 import Header from './Header'
 import useNowPlaying from './hooks/useNowPlaying'
+import MainContainer from './MainContainer';
+import SecondContainer from './SecondContainer';
 
 
 
@@ -12,7 +14,9 @@ const Brouse = () => {
   return (
     <div>
       <Header/>
-       browse   </div>
+       <MainContainer/>
+       <SecondContainer/>
+          </div>
   )
 }
 
