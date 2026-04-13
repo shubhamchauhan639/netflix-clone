@@ -14,7 +14,7 @@ const useNowPlaying = () => {
 
   useEffect(() => {
     getMovies();
-    
+    //
   }, [])
 }
 export default useNowPlaying
