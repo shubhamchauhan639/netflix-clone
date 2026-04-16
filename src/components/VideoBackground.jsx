@@ -8,6 +8,7 @@ const VideoBackground = ({ movieId }) => {
         console.log(videos);
         const filterData = videos.results.filter(video => video.type === "Trailer");
         const trailer = filterData.length ? filterData[0] : videos.results[0];
+        
         console.log(trailer);
     }
     useEffect(()=>{
