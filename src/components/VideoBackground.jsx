@@ -1,22 +1,27 @@
 import React from 'react'
-import { Api_option } from '../utils/constant'
-import { useEffect } from 'react'
+import { useSelector } from 'react-redux';
+import useMovieTrailer from './hooks/useMovieTrailer';
+
 const VideoBackground = ({ movieId }) => {
-    const getMovieVideo = async()=>{
-        const data = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, Api_option)
-        const videos = await data.json();
-        console.log(videos);
-        const filterData = videos.results.filter(video => video.type === "Trailer");
-        const trailer = filterData.length ? filterData[0] : videos.results[0];
-        
-        console.log(trailer);
-    }
-    useEffect(()=>{
-        getMovieVideo();
-    },[])
+  const trailerVideo = useSelector(store => store.movies?.trailerVideo);
+  useMovieTrailer(movieId);
+
+  if (!trailerVideo) return null;
+
   return (
-    <div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/NKYea63tQmI?si=5rzGT6UXs85Dvwpz" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+<div className="relative w-full h-[70vh] overflow-hidden z-0 mt-20">
+      
+      {/* 🎬 Video */}
+      <iframe
+        className="absolute top-0 left-0 w-full h-full object-cover scale-125"
+        src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerVideo?.key}`}
+        title="YouTube video player"
+        allow="autoplay; encrypted-media"
+      />
+
+      {/* 🌑 Dark Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+
     </div>
   )
 }
