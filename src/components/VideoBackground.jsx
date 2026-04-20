@@ -9,20 +9,21 @@ const VideoBackground = ({ movieId }) => {
   if (!trailerVideo) return null;
 
   return (
-<div className="relative w-full h-[70vh] overflow-hidden z-0 mt-20">
-      
-      {/* 🎬 Video */}
-      <iframe
-        className="absolute top-0 left-0 w-full h-full object-cover scale-125"
-        src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerVideo?.key}`}
-        title="YouTube video player"
-        allow="autoplay; encrypted-media"
-      />
+<div className="relative w-full h-[75vh] md:h-[90vh] overflow-hidden -mt-20">
+  <iframe
+    className="absolute top-0 left-0 w-full h-full object-cover scale-125 pointer-events-none"
+    src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerVideo?.key}&modestbranding=1`}
+    title="YouTube video player"
+    allow="autoplay; encrypted-media"
+  />
 
-      {/* 🌑 Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent pointer-events-none"></div>
 
-    </div>
+  {/* Bottom fade */}
+  <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-black to-transparent"></div>
+
+</div>
   )
 }
 
