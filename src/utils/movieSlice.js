@@ -15,7 +15,7 @@ const movieSlice = createSlice({
 state.popularMovies = action.payload
     },
       addUpcoming : (state , action)=>{
-            state.upComing = action.payload;
+            state.upComing = action.payload
         },
       addTopRated : (state , action)=>{
             state.topRated = action.payload;
