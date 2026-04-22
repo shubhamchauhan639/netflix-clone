@@ -62,7 +62,7 @@ const Header = () => {
             alt="user"
           />
 
-
+<button className="py-2 px-4 m-2 bg-blue-500 text-white">GPt search</button>
           <button
             onClick={handleSignOut}
             className="text-white font-semibold"
