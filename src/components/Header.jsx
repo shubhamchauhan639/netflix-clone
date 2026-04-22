@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
+// import { photoURL } from "../utils/constant";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ const Header = () => {
         alt="logo"
       />
 
+
       {/* User section */}
       {user && (
         <div className="flex items-center gap-4">
@@ -59,6 +61,7 @@ const Header = () => {
             src={user?.photoURL}
             alt="user"
           />
+
 
           <button
             onClick={handleSignOut}
@@ -73,3 +76,4 @@ const Header = () => {
 };
 
 export default Header;
+ 
