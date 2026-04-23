@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
+import {toggelGptSearch } from "../utils/gptSlice";
 // import { photoURL } from "../utils/constant";
 
 const Header = () => {
@@ -42,6 +43,9 @@ const Header = () => {
     signOut(auth).catch(() => navigate("/error"));
   };
 
+  const handleGptSearch = () => {
+    dispatch(toggelGptSearch());
+  }
   return (
     <div className="fixed top-0 left-0 px-8 w-full py-2 z-50 bg-gradient-to-b from-black flex justify-between items-center">
 
@@ -62,7 +66,9 @@ const Header = () => {
             alt="user"
           />
 
-<button className="py-2 px-4 m-2 bg-blue-500 text-white">GPt search</button>
+<button 
+onClick = {handleGptSearch}
+className="py-2 px-4 m-2 bg-blue-500 text-white">GPt search</button>
           <button
             onClick={handleSignOut}
             className="text-white font-semibold"
