@@ -7,3 +7,4 @@ export const Api_option =  {
 };
 export const Img_CDN = "https://image.tmdb.org/t/p/w500/"
 // export const photoURL = "https://lh3.googleusercontent.com/a/ACg8ocK5fKjrhSQm15SuhpOVmZ6ANL9gHO8ZEncXAaLki2z75TBQFabT=s400-c"
+//gpt api
