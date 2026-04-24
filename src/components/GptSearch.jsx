@@ -6,6 +6,7 @@ const GptSearch = () => {
   return (
     <div>
         <div className='bg-black h-screen'>
+             
               <GptSearchBar/>
      <GptMovies/>
         </div>
