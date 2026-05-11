@@ -1,7 +1,17 @@
-// const OpenAI = require('openai-api');
+import { GoogleGenAI } from "@google/genai";
+import { api_key } from "./constant";
 
-// Load your key from an environment variable or secret management service
-// (do not include your key directly in your code)
-// const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const ai = new GoogleGenAI({
+  apiKey: api_key
+});
 
-// const openai = new OpenAI(OPENAI_API_KEY);
+async function main() {
+  const response = await ai.models.generateContent({
+    model: "gemini-2.5-flash",
+    contents: "Recommend 5 sci-fi movies like Interstellar",
+  });
+
+  console.log(response.text);
+}
+
+main();
