@@ -1,17 +1,20 @@
+// import OpenAI from "openai";
+// import { OPENAI_KEY } from "./constant";
+
+// const openai = new OpenAI({
+//   apiKey: OPENAI_KEY,
+//   dangerouslyAllowBrowser: true,
+// });
+
+// export default openai;
+
+
 import { GoogleGenAI } from "@google/genai";
-import { api_key } from "./constant";
+import { OPENAI_KEY } from "./constant";
 
 const ai = new GoogleGenAI({
-  apiKey: api_key
+  apiKey:OPENAI_KEY,
+  dangerouslyAllowBrowser : true,
 });
 
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
-    contents: "Recommend 5 sci-fi movies like Interstellar",
-  });
-
-  console.log(response.text);
-}
-
-main();
+export default ai

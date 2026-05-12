@@ -9,10 +9,15 @@ const gptSlice = createSlice(
          reducers : {
     toggelGptSearch : (state)=>{
         state.showGptSearch = !state.showGptSearch;
-    }
+    },
+      addGptMovieResult: (state, action) => {
+      const { movieNames, movieResults } = action.payload;
+      state.movieNames = movieNames;
+      state.movieResults = movieResults;
+    },
    }
     }, 
   
 );
-export const { toggelGptSearch} = gptSlice.actions
+export const { toggelGptSearch , addGptMovieResult} = gptSlice.actions
 export default gptSlice.reducer
