@@ -1,13 +1,11 @@
 # 🎬 Netflix GPT
 
 Netflix GPT is an AI-powered movie recommendation web application inspired by Netflix.  
-It allows users to browse movies, watch trailers, and get intelligent movie suggestions using OpenAI GPT and TMDB APIs.
+It allows users to browse movies, watch trailers, and get intelligent movie suggestions using Gemini GPT and TMDB APIs.
 
 ---
 
 # 🚀 Live Demo
-
-Add your deployed project link here:
 
 ```bash
 https://your-live-project-link.com
@@ -213,7 +211,7 @@ Add project screenshots here.
 
 # 👨‍💻 Author
 
-## Shubham Chauhan
+## Shubham Singh Chauhan
 
 Frontend Developer | React Developer
 
