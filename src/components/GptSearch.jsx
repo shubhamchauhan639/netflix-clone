@@ -4,21 +4,26 @@ import GptSearchBar from "./GptSearchBar";
 
 const GptSearch = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white overflow-x-hidden">
-      
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm -z-10"></div>
+   <div className="relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white overflow-x-hidden">
 
-      {/* Search Section */}
-      <div className="pt-24 px-4 md:px-10">
-        <GptSearchBar />
-      </div>
+  {/* Background Overlay */}
+  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm -z-10"></div>
 
-      {/* Movies Section */}
-      <div className="mt-10 px-2 md:px-6 pb-10">
-        <GptMovies />
-      </div>
+  {/* Search Section */}
+  <section className="pt-20 sm:pt-24 md:pt-28 px-4 sm:px-6 md:px-10 lg:px-16">
+    <div className="max-w-5xl mx-auto">
+      <GptSearchBar />
     </div>
+  </section>
+
+  {/* Movies Section */}
+  <section className="mt-8 sm:mt-10 md:mt-14 px-3 sm:px-6 md:px-10 lg:px-16 pb-10 sm:pb-14">
+    <div className="max-w-7xl mx-auto">
+      <GptMovies />
+    </div>
+  </section>
+
+</div>
   );
 };
 

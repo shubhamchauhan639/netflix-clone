@@ -69,26 +69,66 @@ const GptSearchBar = () => {
   };
 
   return (
-    <div className="flex justify-center items-center pt-40 px-4">
-      <form
-        className="w-full max-w-2xl bg-black/70 backdrop-blur-md p-4 rounded-2xl shadow-lg flex gap-3"
-        onSubmit={(e) => e.preventDefault()}
-      >
-        <input
-          ref={searchText}
-          type="text"
-          placeholder="What would you like to watch?"
-          className="flex-1 p-3 rounded-lg outline-none bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-red-500"
-        />
+  <div className="flex justify-center items-center pt-24 sm:pt-32 md:pt-40 px-4 sm:px-6">
 
-        <button
-          onClick={handleGptSearchClick}
-          className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition duration-200"
-        >
-          Search
-        </button>
-      </form>
-    </div>
+  <form
+    className="
+      w-full 
+      max-w-3xl 
+      bg-black/70 
+      backdrop-blur-lg 
+      border border-white/10
+      p-3 sm:p-4 
+      rounded-2xl 
+      shadow-2xl 
+      flex 
+      flex-col sm:flex-row 
+      gap-3
+    "
+    onSubmit={(e) => e.preventDefault()}
+  >
+
+    <input
+      ref={searchText}
+      type="text"
+      placeholder="What would you like to watch?"
+      className="
+        flex-1 
+        px-4 py-3 sm:py-4
+        rounded-xl 
+        outline-none 
+        bg-white 
+        text-black 
+        placeholder-gray-500 
+        text-sm sm:text-base
+        focus:ring-2 
+        focus:ring-red-500
+      "
+    />
+
+    <button
+      onClick={handleGptSearchClick}
+      className="
+        w-full sm:w-auto
+        px-6 sm:px-8 
+        py-3 sm:py-4
+        bg-red-600 
+        hover:bg-red-700
+        active:scale-95
+        text-white 
+        font-semibold 
+        rounded-xl 
+        transition-all 
+        duration-200
+        shadow-lg
+      "
+    >
+      Search
+    </button>
+
+  </form>
+
+</div>
   );
 };
 
