@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import React, { useEffect } from 'react'
-import Login from './login'
+import Login from './Login'
 import Brouse from './Brouse'
 import { RouterProvider } from 'react-router-dom'
 import { onAuthStateChanged } from "firebase/auth";

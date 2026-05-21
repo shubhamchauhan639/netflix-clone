@@ -19,12 +19,7 @@ const MovieList = ({ title, movies }) => {
 
       {/* Scroll Row */}
       <div
-        className="
-          flex
-          overflow-x-scroll
-          no-scrollbar
-          scroll-smooth
-        "
+        className="overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
       >
         <div className="flex gap-3 sm:gap-4 md:gap-5">
 
