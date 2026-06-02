@@ -26,7 +26,7 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
-    console.log(searchText.current.value);
+  
 
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
@@ -44,7 +44,6 @@ const GptSearchBar = () => {
       return;
     }
 
-    console.log(response.text);
 
     // Convert string into array
     const gptMovies = response.text.split(",");
@@ -57,7 +56,7 @@ const GptSearchBar = () => {
     // Wait for all promises
     const tmdbResults = await Promise.all(promiseArray);
 
-    console.log(tmdbResults);
+  
 
     // Dispatch data to redux store
     dispatch(
