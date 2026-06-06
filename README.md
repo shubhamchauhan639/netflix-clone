@@ -8,7 +8,7 @@ It allows users to browse movies, watch trailers, and get intelligent movie sugg
 # 🚀 Live Demo
 
 ```bash
-[https://your-live-project-link.com](https://netflix-clone-kohl-ten-96.vercel.app/brouse)
+https://netflix-clone-kohl-ten-96.vercel.app/brouse
 ```
 
 ---
