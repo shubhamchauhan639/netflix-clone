@@ -1,6 +1,6 @@
-# 🎬 Netflix GPT
+# 🎬 Netflix AI
 
-Netflix GPT is an AI-powered movie recommendation web application inspired by Netflix.  
+Netflix AI is an AI-powered movie recommendation web application inspired by Netflix.  
 It allows users to browse movies, watch trailers, and get intelligent movie suggestions using Gemini GPT and TMDB APIs.
 
 ---
